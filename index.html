@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja do Rodrigo Augusto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9dbdb;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* CONTAINER (AGORA FLEX IGUAL AO OUTRO SITE) */
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px;
+
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* CARD NOVO ESTILO (GLASS) */
+        .card {
+            width: 260px;
+            max-width: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #3e2f26;
+            height: 5%;
+        }
+
+        .card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #a67c52;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background: #8c6239;
+            transform: scale(1.08);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            .container {
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .card {
+                width: calc(50% - 40px);
+                /* 🔥 garante 2 por linha */
+            }
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #6b4f3b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 22px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #d2b48c;
+            transform: scale(1.2);
+        }
+
+        button{font-family: monospace;}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar bg-dark border-bottom border-body" >
+        <h1>Loja do Rodrigo Augusto</h1>
+
+        <div class="nav-links">
+            <a href="index.html" style="font-weight:bold; text-decoration: underline;">Início</a>
+            <a href="area_guitarra.html">Guitarra</a>
+            <a href="area_baixo.html">Baixo</a>
+            <a href="area_bateria.html">Bateria</a>
+            <a href="area_violao.html">Violão</a>
+            <a href="area_teclado.html">Teclado</a>
+        </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/cf/0b/bc/cf0bbc1b13db978b7ba4fc8753c239b7.jpg">
+            <h3>Guitarra</h3>
+            <a href="area_guitarra.html"><button>Comprar produtos</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/f0/fd/1c/f0fd1c0194aefc875e54da8733259ebd.jpg">
+            <h3>Baixo</h3>
+            <a href="area_baixo.html"><button>Comprar produtos</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/b7/da/b2/b7dab2be7395412771b7e768f780b437.jpg">
+            <h3>Bateria</h3>
+            <a href="area_bateria.html"><button>Comprar produtos</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/8d/57/f2/8d57f2928cd9c41c6f209c40e12830c2.jpg">
+            <h3>Violão</h3>
+            <a href="area_violao.html"><button>Comprar produtos</button></a>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/70/e6/fe/70e6fe42c7636a64eb293160089a08b6.jpg">
+            <h3>Teclado</h3>
+            <a href="area_teclado.html"><button>Comprar produtos</button></a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Siga nas redes sociais:</p>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
