@@ -8,14 +8,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        body {
+                body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f3e6d0;
-
+            background-image: url('image/back.jpg');
+            background-size: cover;
+            /* Faz a imagem cobrir todo o fundo */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-attachment: fixed;
+            /* Deixa a imagem fixa enquanto rola a página */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* Adiciona uma camada opaca sobre a imagem */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* A opacidade está aqui, o valor 0.5 pode ser ajustado */
+            z-index: -1;
+            /* Garante que a camada fique atrás do conteúdo */
         }
 
         /* NAVBAR */
@@ -28,6 +48,19 @@
             align-items: center;
         }
 
+        .navbar img {
+            width: 100px; /* Tamanho inicial para desktop */
+            height: auto;
+            border-radius: 50%; /* 🔥 Arredonda a imagem */
+            transition: 0.3s;
+        }
+
+        /* Responsivo para Mobile */
+        @media (max-width: 600px) {
+            .navbar img {
+                width: 90px; /* Tamanho menor em dispositivos móveis */
+            }
+        }
         .navbar h1 {
             margin: 0;
             font-size: 20px;
@@ -67,7 +100,7 @@
        .card {
             height: 104%;
             width: 100%;
-            background: rgba(224, 201, 166, 0.4);
+            background: rgb(230, 212, 187);
             padding: px;
             border-radius: 15px;
             text-align: center;
@@ -86,7 +119,7 @@
             width: 100%;
             height: 130px;
             object-fit: contain; /* 🔥 muda isso */
-            background-color: #f3e6d0; /* fundo bonito */
+            background-color: #ffffff; /* fundo bonito */
         }
 
         .card h3 {
@@ -178,18 +211,19 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <h1>Loja do Rodrigo Augusto</h1>
+    <nav class="navbar bg-dark border-bottom border-body">
+        <img src="image\logo.jpg" alt="">
 
         <div class="nav-links">
-            <a href="index.html">Início</a>
-            <a href="area_guitarra.html" style="font-weight:bold; text-decoration: underline;">Guitarra</a>
+            <a href="index.html" style="font-weight:bold; text-decoration: underline;">Início</a>
+            <a href="area_guitarra.html">Guitarra</a>
             <a href="area_baixo.html">Baixo</a>
             <a href="area_bateria.html">Bateria</a>
             <a href="area_violao.html">Violão</a>
             <a href="area_teclado.html">Teclado</a>
         </div>
     </nav>
+
 
     <!-- TÍTULO -->
     <h1 class="titulo">Guitarras</h1>

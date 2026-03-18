@@ -11,11 +11,31 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f3e6d0;
-
+            background-image: url('image/back.jpg');
+            background-size: cover;
+            /* Faz a imagem cobrir todo o fundo */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-attachment: fixed;
+            /* Deixa a imagem fixa enquanto rola a página */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* Adiciona uma camada opaca sobre a imagem */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* A opacidade está aqui, o valor 0.5 pode ser ajustado */
+            z-index: -1;
+            /* Garante que a camada fique atrás do conteúdo */
         }
 
         /* NAVBAR */
@@ -26,6 +46,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        /* Logo no Navbar */
+        .navbar img {
+            width: 100px;
+            /* Tamanho inicial para desktop */
+            height: auto;
+            border-radius: 50%;
+            /* 🔥 Arredonda a imagem */
+            transition: 0.3s;
+        }
+
+        /* Responsivo para Mobile */
+        @media (max-width: 600px) {
+            .navbar img {
+                width: 90px;
+                /* Tamanho menor em dispositivos móveis */
+            }
         }
 
         .navbar h1 {
@@ -57,7 +95,7 @@
         .card {
             width: 260px;
             max-width: 100%;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgb(230, 212, 187);
             padding: 15px;
             border-radius: 15px;
             text-align: center;
@@ -76,6 +114,7 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
+            background: white;
         }
 
         .card h3 {
@@ -147,7 +186,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar bg-dark border-bottom border-body">
-        <h1>Loja do Rodrigo Augusto</h1>
+        <img src="E:\Rafael\lojarodrigoaugusto\image\logo.jpg" alt="">
 
         <div class="nav-links">
             <a href="index.html" style="font-weight:bold; text-decoration: underline;">Início</a>
@@ -163,13 +202,13 @@
     <div class="container">
 
         <div class="card">
-            <img src="https://i.pinimg.com/736x/cf/0b/bc/cf0bbc1b13db978b7ba4fc8753c239b7.jpg">
+            <img src="E:\Rafael\lojarodrigoaugusto\image\guitarra.jpg">
             <h3>Guitarra</h3>
             <a href="area_guitarra.html"><button>Comprar produtos</button></a>
         </div>
 
         <div class="card">
-            <img src="https://i.pinimg.com/736x/f0/fd/1c/f0fd1c0194aefc875e54da8733259ebd.jpg">
+            <img src="E:\Rafael\lojarodrigoaugusto\image\baixo.jpg">
             <h3>Baixo</h3>
             <a href="area_baixo.html"><button>Comprar produtos</button></a>
         </div>
@@ -181,13 +220,13 @@
         </div>
 
         <div class="card">
-            <img src="https://i.pinimg.com/736x/8d/57/f2/8d57f2928cd9c41c6f209c40e12830c2.jpg">
+            <img src="E:\Rafael\lojarodrigoaugusto\image\violao.jpg">
             <h3>Violão</h3>
             <a href="area_violao.html"><button>Comprar produtos</button></a>
         </div>
 
         <div class="card">
-            <img src="https://i.pinimg.com/1200x/70/e6/fe/70e6fe42c7636a64eb293160089a08b6.jpg">
+            <img src="E:\Rafael\lojarodrigoaugusto\image\teclado.jpg">
             <h3>Teclado</h3>
             <a href="area_teclado.html"><button>Comprar produtos</button></a>
         </div>
